@@ -8,7 +8,7 @@ import Scene from '@/components/canvas/Scene/Scene';
 import LoadingOverlay from '@/components/canvas/LoadingOverlay/LoadingOverlay';
 
 export default function Home() {
-  console.log('__HOME PAGE__');
+  '__HOME PAGE__');
   return (
     <div className='flex h-full w-full'>
       <LoadingOverlay />

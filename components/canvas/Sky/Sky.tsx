@@ -3,8 +3,6 @@ import { useTexture } from '@react-three/drei';
 
 const Sky = () => {
   const skybox = useTexture('/textures/sky.jpg');
-
-  console.log('SKY');
   return (
     <>
       {/* SKYBOX */}

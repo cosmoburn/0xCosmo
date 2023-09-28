@@ -20,7 +20,6 @@ import Clouds from '../Clouds/Clouds';
 import { CAMERA } from '../_utils/_default_values';
 
 const Scene = () => {
-  console.log('<<<<<SCENE>>>>>');
   const { light_x, light_y, light_z, light_intensity } = useStore((state) => ({
     light_x: state.light_x,
     light_y: state.light_y,

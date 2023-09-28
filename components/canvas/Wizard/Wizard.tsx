@@ -21,7 +21,6 @@ const MAX_VEL = 1;
 const MAX_RUN_VEL = 3;
 
 const Wizard = () => {
-  console.log('WIZARD');
   // const forward = useKeyboardControls((state) => state[Controls.forward]);
   // const back = useKeyboardControls((state) => state[Controls.back]);
   // const left = useKeyboardControls((state) => state[Controls.left]);

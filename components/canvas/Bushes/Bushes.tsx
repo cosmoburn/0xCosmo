@@ -15,13 +15,10 @@ type GLTFResult = GLTF & {
 };
 
 export const BushInstance = (props: InstanceProps) => {
-  console.log('<<BUSH INSTANCE>>');
   return <Instance {...props} />;
 };
 
 export const Bushes = () => {
-  console.log('33 BUSHES 33');
-
   const { nodes } = useGLTF('/models/bush.glb') as GLTFResult;
   const light_x = useStore((state) => state.light_x);
   const light_y = useStore((state) => state.light_y);

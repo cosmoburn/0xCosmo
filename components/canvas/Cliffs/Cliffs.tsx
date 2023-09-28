@@ -22,8 +22,6 @@ type GLTFResult = GLTF & {
 const Cliffs = (props: JSX.IntrinsicElements['group']) => {
   const { nodes } = useGLTF('/models/cliffs.glb') as GLTFResult;
 
-  console.log('CLIFFS');
-
   // Create the toon material with the gradient map
   const cliffMat = useToonMaterial(0xaa935e, '/textures/fourTone.jpg');
   const grounMat = useToonMaterial(0x86a369, '/textures/fourTone.jpg');

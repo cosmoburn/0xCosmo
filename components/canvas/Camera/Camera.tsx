@@ -6,8 +6,6 @@ import gsap from 'gsap';
 import { useStore } from '@/store/store';
 
 const Camera = () => {
-  console.log('0.0.0.0 CAMERA 0.0.0.0');
-
   const { cam_x, cam_y, cam_z, menuOpen } = useStore((state) => ({
     cam_x: state.cam_x,
     cam_y: state.cam_y,
@@ -26,8 +24,6 @@ const Camera = () => {
   }, [dummy]);
 
   useEffect(() => {
-    console.log('moving to cam_pos:', cam_x, cam_y, cam_z);
-
     gsap.to(camera.position, {
       x: cam_x,
       y: cam_y,

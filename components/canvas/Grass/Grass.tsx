@@ -9,8 +9,6 @@ extend({ GrassField });
 const Grass = () => {
   const { scene } = useGLTF('/models/grass_pad.glb');
 
-  console.log('GRASS');
-
   const mesh = scene.children[0] as THREE.Mesh;
   const sampler = useMemo(() => new MeshSurfaceSampler(mesh).build(), [mesh]);
 

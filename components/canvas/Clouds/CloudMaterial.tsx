@@ -3,8 +3,6 @@ import { useMemo } from 'react';
 import { DoubleSide, ShaderMaterial } from 'three';
 
 export function useCloudMaterial(cloudStep: 1 | 2 | 3) {
-  console.log(`_______createCloudMaterial___${cloudStep}____`);
-
   const noiseTexture = useTexture(`/textures/clouds_${cloudStep}.jpg`);
 
   const cloudShader = useMemo(() => {

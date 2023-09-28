@@ -17,8 +17,6 @@ type GLTFResult = GLTF & {
 export function Campfire(props: JSX.IntrinsicElements['group']) {
   const { nodes } = useGLTF('/models/campfire.glb') as GLTFResult;
 
-  console.log('CAMPFIRE');
-
   // Create the toon material with the gradient map
   const toonMat = useToonMaterial(0x74736d, '/textures/fiveTone.jpg');
 

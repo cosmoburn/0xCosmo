@@ -21,8 +21,6 @@ interface WizardProps {
 const Wizard = ({ action = 'sit' }: WizardProps) => {
   const { scene, animations } = useGLTF('/models/wiz.glb');
 
-  console.log('MMM WIZ MODEL MMM');
-
   // manually add shadows to all meshes in the model
   scene.traverse((child) => {
     if (child instanceof Mesh) {
