@@ -1,20 +1,19 @@
 'use client';
-import { Suspense, lazy } from 'react';
+import { Suspense } from 'react';
 
+import LoadingOverlay from '@/components/canvas/LoadingOverlay/LoadingOverlay';
 import NavMenu from '@/components/NavMenu/NavMenu';
 import MouseTracer from '@/components/MouseTracer/MouseTracer';
 import DebugSettings from '@/components/canvas/_utils/DebugSettings';
 import Scene from '@/components/canvas/Scene/Scene';
-import LoadingOverlay from '@/components/canvas/LoadingOverlay/LoadingOverlay';
 
 export default function Home() {
-  '__HOME PAGE__');
   return (
     <div className='flex h-full w-full'>
       <LoadingOverlay />
       <NavMenu />
-      <DebugSettings />
       <MouseTracer />
+      <DebugSettings />
       <Suspense fallback={null}>
         <Scene />
       </Suspense>
