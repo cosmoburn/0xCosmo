@@ -90,7 +90,7 @@ const MenuButton = ({ label, onClick }: MenuButtonProps) => {
   return (
     <button
       onClick={onClick}
-      className='cursor-pointer text-2xl font-bold transition-colors hover:text-purple-800'
+      className='cursor-pointer text-2xl font-black transition-colors hover:text-purple-800 hover:text-darkpurple'
     >
       {label}
     </button>
