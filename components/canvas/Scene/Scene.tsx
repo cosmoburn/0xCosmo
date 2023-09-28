@@ -1,7 +1,6 @@
 'use client';
-import { useState, useEffect } from 'react';
-import * as THREE from 'three';
-import { Canvas, useThree } from '@react-three/fiber';
+
+import { Canvas } from '@react-three/fiber';
 import { Physics } from '@react-three/rapier';
 
 import { useStore } from '@/store/store';
@@ -34,7 +33,7 @@ const Scene = () => {
       <Camera />
 
       {/* UTILITIES */}
-      {/* <MouseMoveEffect /> */}
+      <MouseMoveEffect />
 
       {/* Lighting */}
       <ambientLight intensity={1} />
@@ -45,11 +44,8 @@ const Scene = () => {
       <fog attach='fog' color={'#fff'} near={20} far={100} />
 
       <Physics>
-        {/* intro clouds */}
         <Clouds />
-        {/* skybox */}
         <Sky />
-        {/* Models */}
         <Cliffs />
         <Campfire />
         <Bushes />

@@ -15,7 +15,7 @@ const MouseMoveEffect = () => {
     menuOpen: state.menuOpen,
   }));
 
-  const sensitivity = menuOpen ? 0.0002 : 0.0003; // how sensitive the mouse movement is
+  const sensitivity = menuOpen ? 0.0001 : 0.0002; // how sensitive the mouse movement is
   const lerpFactor = 0.025; // how fast the camera moves to the new position
 
   // create two positions to lerp between
