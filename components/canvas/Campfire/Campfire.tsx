@@ -21,13 +21,13 @@ export function Campfire(props: JSX.IntrinsicElements['group']) {
   const toonMat = useToonMaterial(0x74736d, '/textures/fiveTone.jpg');
 
   // Create the outline mesh
-  const outline = makeOutlineMesh(nodes.rocks, 0.0025, '#5d5c56');
-  outline.position.set(-1.02, 0.02, 0.7);
-  outline.rotation.set(0, Math.PI / 3, 0);
+  // const outline = makeOutlineMesh(nodes.rocks, 0.0025, '#5d5c56');
+  // outline.position.set(-1.02, 0.02, 0.7);
+  // outline.rotation.set(0, Math.PI / 3, 0);
 
   // add outline mesh to scene
-  const scene = useThree((state) => state.scene);
-  scene.add(outline);
+  // const scene = useThree((state) => state.scene);
+  // scene.add(outline);
 
   return (
     <group

@@ -42,7 +42,7 @@ const LoadingOverlay = () => {
   return (
     <div
       ref={overlayRef}
-      className='POOP absolute w-full h-full bg-paper z-max flex items-center justify-center flex-col pointer-events-none'
+      className='absolute w-full h-full bg-paper z-max flex items-center justify-center flex-col pointer-events-none'
     >
       {loading && (
         <div className='relative w-52 h-52 flex'>

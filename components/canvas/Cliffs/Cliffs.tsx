@@ -26,13 +26,13 @@ const Cliffs = (props: JSX.IntrinsicElements['group']) => {
   const cliffMat = useToonMaterial(0xaa935e, '/textures/fourTone.jpg');
   const grounMat = useToonMaterial(0x86a369, '/textures/fourTone.jpg');
 
-  const outlineMesh = useMemo(
-    () => makeOutlineMesh(nodes.cliffs, 0.01, 0xa38b51),
-    [nodes.cliffs]
-  );
+  // const outlineMesh = useMemo(
+  //   () => makeOutlineMesh(nodes.cliffs, 0.01, 0xa38b51),
+  //   [nodes.cliffs]
+  // );
 
-  const scene = useThree((state) => state.scene);
-  scene.add(outlineMesh);
+  // const scene = useThree((state) => state.scene);
+  // scene.add(outlineMesh);
 
   return (
     <group {...props} dispose={null}>

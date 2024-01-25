@@ -1,11 +1,14 @@
-import { useState, useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { Object3D } from 'three';
 import { useThree, useFrame } from '@react-three/fiber';
 import gsap from 'gsap';
+import { useWindowWidth } from '@react-hook/window-size';
 
 import { useStore } from '@/store/store';
 
 const Camera = () => {
+  const windowWidth = useWindowWidth();
+
   const { cam_x, cam_y, cam_z, menuOpen } = useStore((state) => ({
     cam_x: state.cam_x,
     cam_y: state.cam_y,
@@ -45,7 +48,7 @@ const Camera = () => {
       });
     } else {
       gsap.to(dummy.position, {
-        x: -3,
+        x: windowWidth < 768 ? -1.5 : -3,
         y: 1,
         z: 0,
         duration: 1,
@@ -60,6 +63,7 @@ const Camera = () => {
     camera.position,
     dummy.position,
     firstLoad,
+    windowWidth,
   ]);
 
   useFrame(() => {

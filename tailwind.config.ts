@@ -13,15 +13,23 @@ const config: Config = {
       },
       backgroundColor: {
         paper: '#efe7dc',
+        paperShade: '#d3cabf',
         fire: '#fde687',
         purple: '#d88be5',
         darkpurple: '#8340a4',
       },
       colors: {
         paper: '#efe7dc',
+        paperShade: '#d3cabf',
+        paperText: '#9c958c',
+        grayText: '#615d5d',
+        subtleText: '#8c8b8b',
         fire: '#fde687',
         purple: '#d88be5',
         darkpurple: '#8340a4',
+      },
+      transitionDuration: {
+        buttonColor: '0.5s',
       },
     },
   },

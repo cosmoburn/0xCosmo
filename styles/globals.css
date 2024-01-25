@@ -11,6 +11,9 @@ body {
   overflow: hidden;
 }
 
+html {
+  /* overflow-y: scroll; */
+}
 /* :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;

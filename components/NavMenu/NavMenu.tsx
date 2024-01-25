@@ -5,6 +5,7 @@ import gsap from 'gsap';
 
 import { useStore } from '@/store/store';
 import { CAMERA } from '../canvas/_utils/_default_values';
+import SocialMenu from '../SocialMenu/SocialMenu';
 
 const NavMenu = () => {
   const menuRef = useRef(null); // Create a ref to reference the menu
@@ -25,7 +26,7 @@ const NavMenu = () => {
 
       gsap.to(menuRef.current, {
         right: 0,
-        duration: 1,
+        duration: 0.75,
         ease: 'power2.out',
       });
     } else {
@@ -34,20 +35,26 @@ const NavMenu = () => {
       setCamZ(CAMERA.z);
 
       gsap.to(menuRef.current, {
-        right: '-80vw',
-        duration: 1,
+        right: '-100%',
+        duration: 0.75,
         ease: 'power2.in',
       });
     }
   }, [menuOpen, setCamX, setCamY, setCamZ]);
 
   return (
-    <>
-      <button className='fixed top-12 left-12 z-20'>
-        <Image src='/images/purplehat.svg' alt='Logo' width={48} height={48} />
+    <div className='menu'>
+      <button className='fixed top-8 left-8 z-20'>
+        <Image
+          src='/images/purplehat.svg'
+          alt='Logo'
+          width={48}
+          height={48}
+          className='w-12 h-auto'
+        />
       </button>
       <button
-        className='fixed right-12 top-12 z-20 h-10 w-10 rounded-md bg-darkpurple p-2'
+        className='fixed right-8 top-8 z-20 h-10 w-10 p-2 rounded-md hover:bg-purple transition-colors'
         onClick={() => toggleMenuOpen()}
       >
         <div
@@ -68,17 +75,24 @@ const NavMenu = () => {
       </button>
       <div
         ref={menuRef} // Add the ref here
-        className={`fixed bottom-0 top-0 z-10 flex w-80 flex-col overflow-hidden bg-paper ${
-          menuOpen ? 'right-0' : '-right-80'
+        className={`fixed bottom-0 top-0 z-10 w-screen md:w-80 flex justify-center items-center overflow-hidden bg-paper ${
+          menuOpen ? 'right-0' : '-right-[100%]'
         }`}
       >
-        <div className='flex flex-1 flex-col items-start justify-center gap-6 p-12'>
-          <MenuButton label='Home' onClick={() => setSection(0)} />
-          <MenuButton label='About' onClick={() => setSection(1)} />
-          <MenuButton label='Contact' onClick={() => setSection(2)} />
+        <div className='px-12 flex flex-col'>
+          <h2 className='text-2xl font-semibold text-paperText text-right'>
+            Don{`'`} be shy!{' '}
+          </h2>
+          <p className='text-paperText text-right pt-4'>
+            If you also love creating, reach out and let
+            {`'`}s build some cool stuff together!
+          </p>
+          <div className='flex justify-end py-10 -mr-5'>
+            <SocialMenu />
+          </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
@@ -90,7 +104,7 @@ const MenuButton = ({ label, onClick }: MenuButtonProps) => {
   return (
     <button
       onClick={onClick}
-      className='cursor-pointer text-2xl font-black transition-colors hover:text-purple-800 hover:text-darkpurple'
+      className='cursor-pointer text-2xl font-black transition-colors duration-1000 hover:text-purple'
     >
       {label}
     </button>

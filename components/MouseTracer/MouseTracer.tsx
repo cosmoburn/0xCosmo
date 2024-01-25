@@ -53,7 +53,7 @@ const MouseTracer = () => {
   }, [mouseMoved]);
 
   return (
-    <div>
+    <div className='hidden md:block mouse-icon'>
       {/* Larger Circle */}
       <div
         ref={largeCircleRef}

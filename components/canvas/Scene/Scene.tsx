@@ -1,7 +1,12 @@
 'use client';
 
+import { useEffect } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { Physics } from '@react-three/rapier';
+import { ScrollControls, Scroll, Html } from '@react-three/drei';
+
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 import { useStore } from '@/store/store';
 import MouseMoveEffect from '@/components/canvas/_utils/MouseMoveEffect';
@@ -11,12 +16,12 @@ import Wizard from '@/components/canvas/Wizard/Wizard';
 import Sky from '@/components/canvas/Sky/Sky';
 import Camera from '@/components/canvas/Camera/Camera';
 import { Bushes } from '@/components/canvas/Bushes/Bushes';
+import Clouds from '../Clouds/Clouds';
+import { CAMERA } from '../_utils/_default_values';
 
 import Interface from '@/components/Interface/Interface';
 
-import Clouds from '../Clouds/Clouds';
-
-import { CAMERA } from '../_utils/_default_values';
+gsap.registerPlugin(ScrollTrigger);
 
 const Scene = () => {
   const { light_x, light_y, light_z, light_intensity } = useStore((state) => ({
@@ -28,8 +33,10 @@ const Scene = () => {
 
   return (
     <Canvas
+      className='canvas'
       camera={{ position: [CAMERA.start.x, CAMERA.start.y, CAMERA.start.z] }}
     >
+      {/* <ScrollControls pages={2} damping={0.1}> */}
       <Camera />
 
       {/* UTILITIES */}
@@ -41,18 +48,25 @@ const Scene = () => {
         position={[light_x, light_y, light_z]}
         intensity={light_intensity}
       />
-      <fog attach='fog' color={'#fff'} near={20} far={100} />
+      <fog attach='fog' color={'#fff'} near={25} far={100} />
 
       <Physics>
         <Clouds />
+        {/* <Scroll> */}
         <Sky />
         <Cliffs />
         <Campfire />
         <Bushes />
         <Wizard />
+        {/* </Scroll> */}
       </Physics>
 
-      {/* <Interface /> */}
+      {/* <Scroll html> */}
+      {/* <Scroll html> */}
+
+      {/* </Scroll> */}
+      {/* </Scroll> */}
+      {/* </ScrollControls> */}
     </Canvas>
   );
 };
