@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
   },
   openGraph: {
-    title: '0xCosmo.eth',
+    title: '0xCosmo',
     description: 'Creative Developer & Designer',
     images: '/images/social_card.png',
     url: 'https://0xcosmo.com',
