@@ -117,8 +117,8 @@ const Wizard = () => {
   const { wiz_x, wiz_y, wiz_z } = useControls(
     'Wiz Position',
     {
-      wiz_x: { value: 0.15, min: -50, max: 50, step: 0.1 },
-      wiz_y: { value: 0.1, min: -50, max: 50, step: 0.1 },
+      wiz_x: { value: 0.3, min: -50, max: 50, step: 0.1 },
+      wiz_y: { value: 0.2, min: -50, max: 50, step: 0.1 },
       wiz_z: { value: -0.2, min: -50, max: 50, step: 0.1 },
     },
     { color: 'green' }
