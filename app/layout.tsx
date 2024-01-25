@@ -8,8 +8,14 @@ const comfortaa = Comfortaa({ subsets: ['latin'], display: 'swap' });
 export const metadata: Metadata = {
   title: 'Cosmo | Creative Developer',
   description: 'Creative Developer & Designer',
+  twitter: {
+    card: 'summary_large_image',
+  },
   openGraph: {
-    images: '/images/purplehat.svg',
+    title: '0xCosmo.eth',
+    description: 'Creative Developer & Designer',
+    images: '/images/social_card.png',
+    url: 'https://0xcosmo.com',
   },
 };
 
