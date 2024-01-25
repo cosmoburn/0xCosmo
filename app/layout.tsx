@@ -8,6 +8,9 @@ const comfortaa = Comfortaa({ subsets: ['latin'], display: 'swap' });
 export const metadata: Metadata = {
   title: 'Cosmo | Creative Developer',
   description: 'Creative Developer & Designer',
+  openGraph: {
+    images: '/images/purplehat.svg',
+  },
 };
 
 export default function RootLayout({
