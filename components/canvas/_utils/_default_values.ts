@@ -1,8 +1,8 @@
 export const LIGHT = {
-  x: -10,
-  y: 6.5,
-  z: 7.5,
-  intensity: 1,
+  x: -4.4,
+  y: 1.7,
+  z: 0.6,
+  intensity: 0.8,
 };
 
 export const CAMERA = {
