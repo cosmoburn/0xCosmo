@@ -4,7 +4,7 @@ import gsap from 'gsap';
 
 const MouseTracer = () => {
   const circleRef = useRef(null);
-  const largeCircleRef = useRef(null);
+  const outerCircleRef = useRef(null);
   const [mouseMoved, setMouseMoved] = useState(false);
 
   useEffect(() => {
@@ -19,7 +19,7 @@ const MouseTracer = () => {
     });
 
     // Pulsing effect for the outer circle
-    gsap.to(largeCircleRef.current, {
+    gsap.to(outerCircleRef.current, {
       scale: 1.5, // Different scale for a varied pulsing effect
       opacity: 0.3, // Lower opacity
       repeat: -1,
@@ -35,8 +35,8 @@ const MouseTracer = () => {
       }
       
       //animate circles to the mouse position with a small delay
-      if (circleRef.current && largeCircleRef.current) {
-        gsap.to([circleRef.current, largeCircleRef.current], {
+      if (circleRef.current && outerCircleRef.current) {
+        gsap.to([circleRef.current, outerCircleRef.current], {
           x: event.clientX,
           y: event.clientY,
           duration: 0.5,
@@ -45,20 +45,21 @@ const MouseTracer = () => {
       }
     };
 
-    if (circleRef.current && largeCircleRef.current) {
+    if (circleRef.current && outerCircleRef.current) {
       window.addEventListener('mousemove', handleMouseMove);
     }
-
+    
+    // Clean up
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
     };
   }, [mouseMoved]);
 
   return (
-    <div className='hidden md:block mouse-icon'>
+    <div className='hidden md:block'>
       {/* Outer Circle */}
       <div
-        ref={largeCircleRef}
+        ref={outerCircleRef}
         className={`fixed w-4 h-4 bg-purple rounded-full z-40 pointer-events-none ${
           mouseMoved ? 'visible' : 'invisible'
         }`}
