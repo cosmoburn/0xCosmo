@@ -4,11 +4,11 @@ import gsap from 'gsap';
 
 const MouseTracer = () => {
   const circleRef = useRef(null);
-  const largeCircleRef = useRef(null); // New ref for the larger circle
+  const largeCircleRef = useRef(null);
   const [mouseMoved, setMouseMoved] = useState(false);
 
   useEffect(() => {
-    // Pulsating effect for the original circle
+    // Pulsing effect for the inner circle
     gsap.to(circleRef.current, {
       scale: 1.2,
       opacity: 0.7,
@@ -18,7 +18,7 @@ const MouseTracer = () => {
       ease: 'power1.inOut',
     });
 
-    // Pulsating effect for the larger circle
+    // Pulsing effect for the outer circle
     gsap.to(largeCircleRef.current, {
       scale: 1.5, // Different scale for a varied pulsing effect
       opacity: 0.3, // Lower opacity
@@ -27,12 +27,14 @@ const MouseTracer = () => {
       duration: 0.7, // Different duration for a varied pulsing effect
       ease: 'power1.inOut',
     });
-
+    
+    // Set up a listener for mouse movement
     const handleMouseMove = (event: MouseEvent) => {
       if (!mouseMoved) {
         setMouseMoved(true);
       }
-
+      
+      //animate circles to the mouse position with a small delay
       if (circleRef.current && largeCircleRef.current) {
         gsap.to([circleRef.current, largeCircleRef.current], {
           x: event.clientX,
@@ -54,7 +56,7 @@ const MouseTracer = () => {
 
   return (
     <div className='hidden md:block mouse-icon'>
-      {/* Larger Circle */}
+      {/* Outer Circle */}
       <div
         ref={largeCircleRef}
         className={`fixed w-4 h-4 bg-purple rounded-full z-40 pointer-events-none ${
@@ -62,7 +64,7 @@ const MouseTracer = () => {
         }`}
         style={{ transform: 'translate(-50%, -50%)' }}
       />
-      {/* Original Circle */}
+      {/* Inner Circle */}
       <div
         ref={circleRef}
         className={`fixed w-3 h-3 bg-purple rounded-full z-50 pointer-events-none ${
